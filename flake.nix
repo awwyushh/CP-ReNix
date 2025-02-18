@@ -1,6 +1,7 @@
 {
-  description = "C++ Competitive Programming Re:Nix-ified";
-  author = "Ayush Shukla";
+  description = ''C++ Competitive Programming Re:Nix-ified
+      Author: Ayush Shukla
+  '';
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,8 +18,11 @@
           packages = with pkgs; [
             gcc # C++ Compiler (or use clang)
             cmake # Build system generator
+            valgrind
+            boost
             gdb   # GNU Debugger
-            clang-tools_unstable.clang-format # Code formatter
+            clang-tools
+            # clang-tools_unstable.clang-format # Code formatter
           ];
 
           shellHook = ''
